@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('navbar.css');
+@import url('banner.css');
+@import url('footer.css');
+
+:root{
+	--grey-clair-bg:#E4E4E4;
+	--grey-col: #999797;
+	--grey-dark: #565656;
+	--grey-darker: #1F1F1F;
+}
+
+*{
+    
+    box-sizing: border-box;
+    font-family: 'roboto', sans-serif;
+}
+
+body{
+	margin: 0;
+    padding: 0;
+	height: 100%;
+}

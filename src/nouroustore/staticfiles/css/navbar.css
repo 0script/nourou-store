@@ -1,0 +1,270 @@
+/* Styling for the navbar*/
+
+/* styling for the top navbar*/
+
+div.logo{
+	font-family: 'Lobster' , sans-serif;
+	font-size: 25px;
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--grey-clair-bg);
+    z-index: 9;
+}
+
+.nav{
+    padding: 10px 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-items{
+    display: flex;
+    align-items: center;
+}
+
+i#toggle-search{
+	color: var(--grey-col);
+	display: none;
+}
+
+i#toggle-search:hover{
+	color: var(--grey-dark);
+	transform: scale(120%);
+	cursor: pointer;
+}
+
+
+
+.search{
+    width: 500px;
+    display: flex;
+}
+
+.search-box{
+    width: 80%;
+    height: 40px;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border: 1px solid --grey-col;
+    text-transform: capitalize;
+    background: var(--grey-clair-bg);
+    color: var(--grey-darker);
+    outline: none;
+}
+
+.search-btn{
+	font-family: 'Poppins';
+	width: 20%;
+    height: 40px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: var(--grey-dark);
+    color: white;
+    text-transform: capitalize;
+    font-size: 15px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.search-btn:hover{
+	background-color: var(--grey-darker);
+}
+
+.search-btn:active{
+	transform: scale(80%);
+
+}
+
+.search-box::placeholder{
+    color: var(--grey-darker);
+}
+
+.nav-items a{
+    margin-left: 20px;
+}
+
+.nav-items a i{
+    color: var(--grey-col);
+}
+
+.nav-items a i:hover{
+	color: var(--grey-dark);
+	transform: scale(120%);
+	cursor: pointer;
+}
+
+
+/* navigation links styling */
+
+div#menu-btn{
+	display: none;
+	width: 1rem;
+	padding: 1%;
+	opacity: 0.5;
+}
+
+div#menu-btn:hover{
+	opacity: 1;
+	transform: scale(120%);
+}
+
+.links-container{
+    width: 100%;
+    display: flex;
+    padding: 10px 10vw;
+    justify-content: center;
+    list-style: none;
+    border-top: 1px solid var(--grey-darker);
+}
+
+.link{
+
+	font-family: 'Lobster' , sans-serif;
+    text-transform: capitalize;
+    padding: 0 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: var(--grey-dark);
+    opacity: 0.5;
+    transition: .5s;
+}
+
+.link:hover{
+    opacity: 1;
+	color: var(--grey-darker);
+}
+
+.sous-menu{
+    display: none;
+    box-shadow: 0px 1px 2px var(--grey-col);
+    background-color: var(--grey-clair-bg);
+    position: absolute;
+    width: auto;
+	padding: 1rem;
+    z-index: 1000;
+}
+
+li:hover .sous-menu{
+	display: block;
+}
+
+li.deroulant > a::after{
+	content: " ▼";
+	font-size: 12px;
+}
+
+.sous-menu li{
+	text-align: center;
+	list-style: none;
+}
+
+.sous-menu li a{
+	color: var(--grey-col);
+	text-decoration: none;
+	font-family: 'Lobster' , sans-serif;
+}
+
+.sous-menu li a:hover{
+	color: var(--grey-darker);
+}
+
+nav > ul li:hover .sous{
+    display: block;
+}
+
+/* Style for tablet */
+
+@media (max-width:960px) {
+	
+	div.logo{
+		font-size: 20px;
+	}
+
+	.search{
+		width: 300px;
+	}
+
+	.search-box{
+		width: 80%;
+	}
+
+	.search-btn{
+		width: 20%;
+		font-size: 12px;
+		padding: 8px;
+	}	
+}
+
+/* Style for mobile */
+
+@media (max-width:690px){
+
+	div.logo{
+		font-family: 'Lobster' , sans-serif;
+		font-size: 18px;
+	}
+	
+	.nav{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+
+	i#toggle-search{
+		display: inline-block;
+		margin-right: 0.3rem;
+	}
+
+	.search{
+		visibility: hidden;
+		width: 5%;
+		opacity: 0.3;
+		transition: visibility 1s , opacity 1s , width 1s;
+		transition: all 0.5s ease-in;
+	}
+
+	.search.active{
+		visibility: visible;
+		width: 50%;
+		opacity: 1;
+	}
+
+	.search-box{
+		width: 100%;
+		border-radius: 10px;
+	}
+
+	.search-btn{
+		display: none;
+	}
+		
+	/* Responsive navigation menu */
+
+	div#menu-btn{
+		display: block;
+	}
+
+
+	ul.links-container{
+		display: none;
+	}
+
+	ul.links-container.active{
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+	}
+
+}

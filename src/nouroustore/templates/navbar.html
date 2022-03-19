@@ -1,0 +1,43 @@
+<nav class="navbar">
+
+
+    <!-- Website navigation and header  -->
+    <div class="nav">
+
+        <div id="logo" class="logo">Nourou Fashion</div>
+
+        <div class="nav-items">
+            
+
+
+            <i id="toggle-search" class="fa-solid fa-magnifying-glass"></i>
+            
+            <div class="search">
+                <input type="text" class="search-box" placeholder="search brand, product">
+                <button class="search-btn">search</button>
+            </div>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <a href="#"><i class="fa-solid fa-user"></i></a>
+        </div>
+    </div>
+
+    <div id="menu-btn">
+        <i class="fa-solid fa-bars" id="icon-menu-btn"></i>
+    </div>
+    <ul class="links-container">
+        <li class="link-item"><a href="#" class="link">home</a></li>
+        <li class="link-item deroulant"><a href="#" class="link">products</a>
+            <ul class="sous-menu">
+                <li><a href="#">Men</a></li>
+                <li><a href="#">Women</a></li>
+                <li><a href="#">Children</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+        </li>
+        <li class="link-item"><a href="#" class="link">about us</a></li>
+        <li class="link-item"><a href="#" class="link">contact</a></li>
+    </ul>
+    
+</nav>			
+{% load static %}
+<script src="{% static 'js/navbar.js'%}"></script>
