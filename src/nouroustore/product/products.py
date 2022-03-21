@@ -17,11 +17,11 @@ class Category(models.Model):
 class Products(models.Model):
     name=models.CharField(max_length=50)
     price=models.DecimalField(max_digits=10,decimal_places=2)
+    remise=models.DecimalField(max_digits=10,decimal_places=2,default=0)
     category=models.ForeignKey(Category, on_delete=models.CASCADE,default=1)
-
+    description=models.CharField(max_length=100,default='a short line about the cloth..')
     sexe=models.CharField(max_length=50)
     size=models.CharField(max_length=50)
-    
     image_main=models.ImageField(upload_to='media/products/')
 
     @staticmethod
