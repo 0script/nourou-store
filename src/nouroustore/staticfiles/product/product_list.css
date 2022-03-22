@@ -29,6 +29,7 @@ div.product-cards-container{
 	width: 100%;
 	height: 350px;
 	overflow: hidden;
+	object-fit: cover;
 }
 
 .product-thumb{

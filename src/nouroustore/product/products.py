@@ -22,7 +22,7 @@ class Products(models.Model):
     description=models.CharField(max_length=100,default='a short line about the cloth..')
     sexe=models.CharField(max_length=50)
     size=models.CharField(max_length=50)
-    image_main=models.ImageField(upload_to='media/products/')
+    image_main=models.ImageField(upload_to='products')
 
     @staticmethod
     def get_products_by_id(ids):

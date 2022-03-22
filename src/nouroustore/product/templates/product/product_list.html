@@ -10,7 +10,7 @@
                         <span class="discount-tag"> {{ product.remise }} off</span>
                     {% endif %}
                     
-                    <img src="{{ product.image_main }}" class="product-thumb" alt="">
+                    <img src="{{ product.image_main.url }}" class="product-thumb" alt="">
                     <button class="card-btn">add to whislist</button>
                 </div>
                 <div class="product-info">
@@ -22,7 +22,7 @@
                     
                     {% if product.remise %}
                         {% load custom_tags %}
-                        <span class="price">{{ product.price }}</span><span class="actual-price">{{ product.price|calcul_remise:product.remise }}</span>
+                        <span class="price">{{ product.price|calcul_remise:product.remise }}</span><span class="actual-price">{{ product.price }}</span>
                     {% else %}
                         <span class="price">{{ product.price }}</span>
                     {% endif %}
@@ -32,22 +32,18 @@
 
     </div>
 
-    <div class="container-paginator">
-
-        {% if product_objects.has_previous and product_objects.has_next %}
-            
-            <button class="btn-paginator" id="prev"><a  href="?page={{ product_objects.previous_page_number }}">previous</a></button>
-            <button class="btn-paginator" id="next"><a  href="?page={{product_objects.next_page_number }}">next</a></button>
-        {% elif not product_objects.has_previous and product_objects.has_next %}
-
-            {% comment %} <button class="btn-paginator" id="prev" disabled><a  href="?page={{ product_objects.previous_page_number }}">previous</a></button>
-            <button class="btn-paginator" id="next"><a  href="?page={{product_objects.next_page_number }}">next</a></button> {% endcomment %}
-        
-        {% elif product_objects.has_previous and not product_objects.has_next %}
-
-            <button class="btn-paginator" id="prev"><a  href="?page={{ product_objects.previous_page_number }}">previous</a></button>
-            <button class="btn-paginator" id="next" disabled><a  href="?page={{product_objects.next_page_number }}">next</a></button>
-        
+    <div class="container-paginator" id="container-paginator">
+        {% if product_objects.has_previous %}
+            <button class="btn-paginator" id="prev"><a  href='{{ url "home_view" product_objects.previous_page_number }}'>previous</a></button>
+        {% else %}
+            <button class="btn-paginator" id="prev" disabled><a  href="{{ url "home_view" product_objects.previous_page_number }}">previous</a></button>
         {% endif %}
+
+        {% if product_objects.has_next %}
+            <button class="btn-paginator" id="next"><a  href="{{ url "home_view" product_objects.next_page_number }}">next</a></button>
+        {% else %}
+            <button class="btn-paginator" id="next" disabled><a  href="{{ url "home_view" product_objects.next_page_number }}">next</a></button>
+        {% endif %}
+
     </div>
 </div>
