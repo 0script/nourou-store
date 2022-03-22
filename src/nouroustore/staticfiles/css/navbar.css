@@ -39,6 +39,9 @@ i#toggle-search:hover{
 }
 
 
+form.search{
+	font-family: 'Poppins' , sans-serif;
+}
 
 .search{
     width: 500px;

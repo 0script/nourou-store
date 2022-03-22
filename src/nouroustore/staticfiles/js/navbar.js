@@ -1,5 +1,5 @@
 const togglesearch=document.querySelector('i#toggle-search');
-const search=document.querySelector('div.search');
+const search=document.querySelector('form.search');
 
 /* responsive nav menu vars */
 const menunav=document.querySelector('ul.links-container')

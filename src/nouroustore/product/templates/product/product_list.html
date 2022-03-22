@@ -34,15 +34,23 @@
 
     <div class="container-paginator" id="container-paginator">
         {% if product_objects.has_previous %}
-            <button class="btn-paginator" id="prev"><a  href='{{ url "home_view" product_objects.previous_page_number }}'>previous</a></button>
+            <button class="btn-paginator" id="prev">
+                <a href="?page={{ page_obj.previous_page_number }}">&#x25C0; previous</a>
+            </button>
         {% else %}
-            <button class="btn-paginator" id="prev" disabled><a  href="{{ url "home_view" product_objects.previous_page_number }}">previous</a></button>
+            <button class="btn-paginator" id="prev" disabled>
+                <a href="?page={{ page_obj.previous_page_number }}">&#x25C0; previous</a>
+            </button>
         {% endif %}
 
         {% if product_objects.has_next %}
-            <button class="btn-paginator" id="next"><a  href="{{ url "home_view" product_objects.next_page_number }}">next</a></button>
+            <button class="btn-paginator" id="next">
+                <a href="?page={{ page_obj.next_page_number }}">next &#x25B6;</a>
+            </button>
         {% else %}
-            <button class="btn-paginator" id="next" disabled><a  href="{{ url "home_view" product_objects.next_page_number }}">next</a></button>
+            <button class="btn-paginator" id="next" disabled>
+                <a href="?page={{ page_obj.next_page_number }}">next &#x25B6;</a>
+            </button>
         {% endif %}
 
     </div>

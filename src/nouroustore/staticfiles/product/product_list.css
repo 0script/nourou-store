@@ -128,9 +128,12 @@ div.product-cards-container{
 	text-decoration: line-through;
 }
 
+div#container-paginator{
+	text-align: center;
+}
 
-.btn-paginator{
-	background-color: #37D95E;
+button.btn-paginator{
+	background-color: grey;
 	color: black;
 	border-radius: 7px;
 	cursor: pointer;
@@ -141,19 +144,17 @@ div.product-cards-container{
 	transition: 0.4s ease-in;
 }
 
-
-.btn-paginator:active{
-	transform: scale(0.98);
-}
-
-.btn-paginator:focus{
-	outline: 0;
-	transform: scale(120%);
-}
-
-.btn-paginator:disabled{
+button.btn-paginator:disabled{
 	background-color: grey;
-	cursor: not-allowed;
+}
+
+button.btn-paginator a{
+	text-decoration: none;
+	color: black;
+}
+
+button.btn-paginator a:hover{
+	color: blue;
 }
 
 @media (max-width:760px){

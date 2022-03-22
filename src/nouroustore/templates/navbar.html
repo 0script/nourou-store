@@ -12,10 +12,11 @@
 
             <i id="toggle-search" class="fa-solid fa-magnifying-glass"></i>
             
-            <div class="search">
-                <input type="text" class="search-box" placeholder="search brand, product">
-                <button class="search-btn">search</button>
-            </div>
+            <form class="search" method="GET" action="#" value="{{request.GET.q}}" > {% csrf_token %}
+                <input type="text" class="search-box" placeholder="search brand, product" name="q" value="{{request.GET.q}}>
+                <input class="search-btn" type="submit" value="Search" />
+                {% comment %} <button class="search-btn" type="submit">search</button> {% endcomment %}
+            </form>
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
             <a href="#"><i class="fa-solid fa-user"></i></a>
         </div>
