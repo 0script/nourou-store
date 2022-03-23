@@ -14,16 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include,re_path
-from django.conf.urls.static import static
-from . import settings
-from product.views import home_view 
+from django.urls import re_path
+from .views import searchproduct 
 
-
+app_name='product_app   '
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('',home_view,name='home page'),
-    re_path(r'^search/',include('product.urls',namespace='product_app')),
+    re_path(r'^$',searchproduct,name='searchproduct'),
 ]
-if settings.DEBUG:
-    urlpatterns+=static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

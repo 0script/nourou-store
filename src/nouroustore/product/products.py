@@ -5,11 +5,22 @@ from django.db import models
 class Category(models.Model):
     'Category for product'
     name=models.CharField(max_length=50)
-    sexe=models.CharField(max_length=50,default='Mix')
-
+    brand=models.CharField(max_length=20,blank=True)
+    
     @staticmethod
     def get_all_categories():
         return Category.objects.all()
+    
+    @staticmethod
+    def get_all_names():
+        names=[ i.name for i in Category.objects.all()]
+        return names
+    
+    @staticmethod
+    def get_all_brands():
+        brands=[ i.brand for i in Category.objects.all()]
+        return brands
+    
 
     def __str__(self):
         return self.name

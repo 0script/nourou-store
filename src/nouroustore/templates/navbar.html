@@ -12,9 +12,9 @@
 
             <i id="toggle-search" class="fa-solid fa-magnifying-glass"></i>
             
-            <form class="search" method="GET"  name="search-form">
-                <input type="text" class="search-box" placeholder="search brand, product" name="search-input">
-                <input class="search-btn" type="submit" value="Search" />
+            <form class="search" method="GET"  action="{% url 'product_app:searchproduct' %}" value="{{request.GET.q}}">
+                <input type="text" class="search-box" placeholder="search brand, product" name="q" value="{{request.GET.q}}">
+                <input class="search-btn" type="submit" name="submit" value="Search" />
                 {% comment %} <button class="search-btn" type="submit">search</button> {% endcomment %}
             </form>
             <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
